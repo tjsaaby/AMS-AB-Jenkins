@@ -47,7 +47,7 @@ void GenerateTestCommands(void *pvParameters)
 		vTaskDelayUntil(&xLastWakeTime, xFrequency);
 	}
 }
-
+//
 
 FILE uart_str = FDEV_SETUP_STREAM(UART_PutChar, NULL, _FDEV_SETUP_RW);
 
