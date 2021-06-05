@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
+    <ProjectGuid>{b9d016ac-a75d-4d80-9630-11be0cd41d55}</ProjectGuid>
+    <avrdevice>ATmega2560</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>RTOS_HH</AssemblyName>
+    <Name>RTOS_HH</Name>
+    <RootNamespace>RTOS_HH</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfVersion>2.11.1</AsfVersion>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <EraseKey />
+    <avrtool>com.atmel.avrdbg.tool.atmelice</avrtool>
+    <avrtoolserialnumber>J42700030271</avrtoolserialnumber>
+    <avrdeviceexpectedsignature>0x1E9801</avrdeviceexpectedsignature>
+    <com_atmel_avrdbg_tool_atmelice>
+      <ToolOptions>
+        <InterfaceProperties>
+          <JtagDbgClock>200000</JtagDbgClock>
+        </InterfaceProperties>
+        <InterfaceName>JTAG</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.atmelice</ToolType>
+      <ToolNumber>J42700030271</ToolNumber>
+      <ToolName>Atmel-ICE</ToolName>
+    </com_atmel_avrdbg_tool_atmelice>
+    <avrtoolinterface>JTAG</avrtoolinterface>
+    <avrtoolinterfaceclock>200000</avrtoolinterfaceclock>
+    <AsfFrameworkConfig>
+      <framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.43.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+        <InterfaceName>JTAG</InterfaceName>
+      </ToolOptions>
+      <ToolType xmlns="">com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Simulator</ToolName>
+    </com_atmel_avrdbg_tool_simulator>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.Device>-mmcu=atmega2560 -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega2560"</avrgcc.common.Device>
+        <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.209\include</Value>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.6.364\include\</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.209\include</Value>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.6.364\include\</Value>
+          </ListValues>
+        </avrgcc.assembler.general.IncludePaths>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+  <avrgcc.common.Device>-mmcu=atmega2560 -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega2560"</avrgcc.common.Device>
+  <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../src</Value>
+      <Value>../src/drivers</Value>
+      <Value>../src/game</Value>
+      <Value>../src/render</Value>
+      <Value>../src/freertos</Value>
+      <Value>../src/utils</Value>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.6.364\include\</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </avrgcc.linker.libraries.Libraries>
+  <avrgcc.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.209\include</Value>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.6.364\include\</Value>
+    </ListValues>
+  </avrgcc.assembler.general.IncludePaths>
+  <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+</AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="src\communication\esp_command_builder.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\communication\esp_command_builder.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\communication\esp_command_handler.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\communication\esp_command_handler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\communication\esp_command_to_game_command_params.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\communication\esp_command_to_game_command_params.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\communication\esp_data_structs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\communication\esp_defines.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\gfxfont.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\gfxfont.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\led.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\led.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\switch.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\switch.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\TFTdriver.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\TFTdriver.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\Touchdriver.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\Touchdriver.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\uart_int.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\uart_int.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\atomic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\croutine.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\croutine.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\deprecated_definitions.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\event_groups.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\event_groups.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\FreeRTOS.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\FreeRTOSConfig.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\heap_1.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\list.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\list.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\message_buffer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\mpu_prototypes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\mpu_wrappers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\port.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\portable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\portmacro.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\projdefs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\queue.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\queue.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\semphr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\StackMacros.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\stack_macros.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\stream_buffer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\stream_buffer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\task.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\tasks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\timers.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\freertos\timers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\ball.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\ball.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\commands\check_if_touched.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\commands\check_if_touched.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\commands\initialize_players_command.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\commands\initialize_players_command.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\commands\move_local_player_command.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\commands\move_local_player_command.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\commands\move_server_player_command.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\commands\move_server_player_command.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\coordinate.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\coordinate.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\game_logic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\game_logic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\scoreboard.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\scoreboard.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\player.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\player.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\Touch.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\game\Touch.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\render\render.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\render\render.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\utils\color.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\utils\color.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src" />
+    <Folder Include="src\communication\" />
+    <Folder Include="src\drivers" />
+    <Folder Include="src\game" />
+    <Folder Include="src\freertos" />
+    <Folder Include="src\game\commands" />
+    <Folder Include="src\utils" />
+    <Folder Include="src\render" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\freertos\readme.md">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\freertos\stdint.readme">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\readme.txt">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
